@@ -641,7 +641,7 @@ describe('body params validation', () => {
             const response = await makeRequest('/json-body-required', {
               method: 'POST',
               headers: { 'content-type': 'application/json' },
-              body: 'A'.repeat(1024 * 1024 * 10 + 1),
+              body: 'A'.repeat(1024 * 1024 * 500 + 1),
             });
 
             expect(response.status).toBe(413);
